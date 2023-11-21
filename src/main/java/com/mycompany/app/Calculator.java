@@ -1,5 +1,8 @@
 package com.mycompany.app;
 
+import java.util.*;
+import java.io.*;
+
 public class Calculator {
     // add
     public static double add(double a, double b) {
@@ -22,11 +25,11 @@ public class Calculator {
     // divide
     public static double divide(double num1, double num2) {
         if (num2 == 0) {
-            // double result = num1 / num2;
-            throw new ArithmeticException("Cannot divide by zero");
+            return 0;
         }
         
         double res = num1 / num2;
+
         return res;
     }
 
@@ -62,6 +65,10 @@ public class Calculator {
 
     // log base 10
     public static double logBase10(double num) {
+        if(num <= 0){
+            return 0;
+        }
+
         double res = Math.log10(num);
         return res;
     }
@@ -74,12 +81,67 @@ public class Calculator {
 
     // sqaure root
     public static double squareRoot(double number) {
+        if(number < 0){
+            return -1;
+        }
         return Math.sqrt(number);
     }
-    // inverse (x ^ -1)
+
+    // inverse (x ^ -1) (call divide)
+    public static double inverse(double num){
+        double res = divide(1, num);
+        return res;
+    }
+
     // factorial
-    // sin
-    // cos
-    // tan (sin / cos)
-    
+    public static double factorial(double n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+
+        else {
+            return n * factorial(n - 1);
+        }
+    }
+
+    // sine
+    public static double sine(double degree){
+        double radians = Math.toRadians(degree);
+        double res = Math.sin(radians);
+
+        return res;
+    }
+
+    // inverse sine
+    public static double inverseSine(double num){
+        double res = Math.asin(num);
+        return Math.toDegrees(res);
+    }
+
+    // cosine
+    public static double cosine(double degree){
+        double radians = Math.toRadians(degree);
+        double res = Math.cos(radians);
+
+        return res;
+    }
+
+    // inverse cosine
+    public static double inverseCosine(double num){
+        double res = Math.acos(num);
+        return Math.toDegrees(res);
+    }
+
+    // tan (sin / cos)  (call sine, cosine and divide)
+    public static double tangent(double degree){
+        double res = divide(sine(degree), cosine(degree));
+
+        return res;
+    }
+
+    // inverse tangent
+    public static double inverseTan(double num){
+        double res = Math.atan(num);
+        return Math.toDegrees(res);
+    }
 }
