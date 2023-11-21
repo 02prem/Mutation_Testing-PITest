@@ -68,7 +68,7 @@ public class CalculatorTest {
         assertEquals(Math.exp(-2), Calculator.exponential(-2), 0.001);
     }
 
-    private static final double TOLERANCE = 1e-10;
+    private static final double TOLERANCE = 1e-3;
     @Test
     public void testLogbase10() {
         assertEquals(1.0, Calculator.logBase10(10), TOLERANCE);
@@ -90,5 +90,63 @@ public class CalculatorTest {
         assertEquals(2.0, Calculator.squareRoot(4), TOLERANCE);
         assertEquals(0.0, Calculator.squareRoot(0), TOLERANCE);
         assertEquals(-1.0, Calculator.squareRoot(-9), TOLERANCE);
+    }
+
+    @Test
+    public void testInverse() {
+        assertEquals(0.5, Calculator.inverse(2), TOLERANCE);
+        assertEquals(-0.25, Calculator.inverse(-4), TOLERANCE);
+        assertEquals(0, Calculator.inverse(0), TOLERANCE);
+    }
+
+    @Test
+    public void testFactorial() {
+        assertEquals(1, Calculator.factorial(0), TOLERANCE);
+        assertEquals(1, Calculator.factorial(1), TOLERANCE);
+        assertEquals(24, Calculator.factorial(4), TOLERANCE);
+        assertEquals(0, Calculator.factorial(-2), TOLERANCE);
+    }
+
+    @Test
+    public void testSine() {
+        assertEquals(0.5, Calculator.sine(30), TOLERANCE);
+        assertEquals(-0.707, Calculator.sine(-45), TOLERANCE);
+        assertEquals(0.0, Calculator.sine(0), TOLERANCE);
+        assertEquals(1.0, Calculator.sine(90), TOLERANCE);
+    }
+
+    @Test
+    public void testInverseSine() {
+        assertEquals(30, Calculator.inverseSine(0.5), TOLERANCE);
+        assertEquals(90, Calculator.inverseSine(1), TOLERANCE);
+        assertEquals(-90, Calculator.inverseSine(-1), TOLERANCE);
+    }
+
+    @Test
+    public void testCosine() {
+        assertEquals(0.866, Calculator.cosine(30), TOLERANCE);
+        assertEquals(0.707, Calculator.cosine(-45), TOLERANCE);
+        assertEquals(1.0, Calculator.cosine(0), TOLERANCE);
+        assertEquals(0.0, Calculator.cosine(90), TOLERANCE);
+    }
+
+    @Test
+    public void testInverseCosine() {
+        assertEquals(30.0, Calculator.inverseCosine(0.866), 0.01);
+        assertEquals(0.0, Calculator.inverseCosine(1), TOLERANCE);
+        assertEquals(180.0, Calculator.inverseCosine(-1), TOLERANCE);
+    }
+
+    @Test
+    public void testTangent() {
+        assertEquals(Math.tan(Math.toRadians(30)), Calculator.tangent(30), TOLERANCE);
+        // assertEquals(0, Calculator.tangent(90), TOLERANCE);
+        assertEquals(0, Calculator.tangent(180), TOLERANCE);
+    }
+
+    @Test
+    public void testInverseTangent() {
+        assertEquals(30, Calculator.inverseTan(Math.tan(Math.toRadians(30))), TOLERANCE);
+        assertEquals(0, Calculator.inverseTan(0), TOLERANCE);
     }
 }

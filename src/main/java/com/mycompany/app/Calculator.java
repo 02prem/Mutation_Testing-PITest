@@ -27,9 +27,7 @@ public class Calculator {
         if (num2 == 0) {
             return 0;
         }
-        
         double res = num1 / num2;
-
         return res;
     }
 
@@ -68,7 +66,6 @@ public class Calculator {
         if(num <= 0){
             return 0;
         }
-
         double res = Math.log10(num);
         return res;
     }
@@ -95,11 +92,13 @@ public class Calculator {
 
     // factorial
     public static double factorial(double n) {
+        if(n < 0){
+            return 0;
+        }
         if (n == 0 || n == 1) {
             return 1;
         }
-
-        else {
+        else{
             return n * factorial(n - 1);
         }
     }
@@ -108,7 +107,6 @@ public class Calculator {
     public static double sine(double degree){
         double radians = Math.toRadians(degree);
         double res = Math.sin(radians);
-
         return res;
     }
 
@@ -122,7 +120,6 @@ public class Calculator {
     public static double cosine(double degree){
         double radians = Math.toRadians(degree);
         double res = Math.cos(radians);
-
         return res;
     }
 
@@ -135,7 +132,6 @@ public class Calculator {
     // tan (sin / cos)  (call sine, cosine and divide)
     public static double tangent(double degree){
         double res = divide(sine(degree), cosine(degree));
-
         return res;
     }
 
