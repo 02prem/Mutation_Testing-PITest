@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mycompany.app.AlgoTest" time="0.002" tests="29" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mycompany.app.AlgoTest" time="0.007" tests="38" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/prem/ST/my-app/target/surefire/surefirebooter12060360167676242907.jar /home/prem/ST/my-app/target/surefire 2023-11-27T00-08-37_659-jvmRun1 surefire10614891114058641182tmp surefire_013086327801863665601tmp"/>
+    <property name="sun.java.command" value="/home/prem/ST/my-app/target/surefire/surefirebooter14095411027486292592.jar /home/prem/ST/my-app/target/surefire 2023-11-27T14-07-01_378-jvmRun1 surefire9212160486057989601tmp surefire_014214590317476818966tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/prem/ST/my-app/target/test-classes:/home/prem/ST/my-app/target/classes:/home/prem/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/prem/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -32,7 +32,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/prem/ST/my-app/target/surefire/surefirebooter12060360167676242907.jar"/>
+    <property name="surefire.real.class.path" value="/home/prem/ST/my-app/target/surefire/surefirebooter14095411027486292592.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.20.1+1-post-Ubuntu-0ubuntu122.04"/>
     <property name="user.name" value="prem"/>
@@ -58,7 +58,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="t1" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t1" classname="com.mycompany.app.AlgoTest" time="0.002"/>
   <testcase name="t2" classname="com.mycompany.app.AlgoTest" time="0"/>
   <testcase name="t3" classname="com.mycompany.app.AlgoTest" time="0"/>
   <testcase name="t4" classname="com.mycompany.app.AlgoTest" time="0"/>
@@ -80,11 +80,20 @@
   <testcase name="t20" classname="com.mycompany.app.AlgoTest" time="0"/>
   <testcase name="t21" classname="com.mycompany.app.AlgoTest" time="0"/>
   <testcase name="t22" classname="com.mycompany.app.AlgoTest" time="0"/>
-  <testcase name="t23" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t23" classname="com.mycompany.app.AlgoTest" time="0.001"/>
   <testcase name="t24" classname="com.mycompany.app.AlgoTest" time="0"/>
   <testcase name="t26" classname="com.mycompany.app.AlgoTest" time="0"/>
   <testcase name="t27" classname="com.mycompany.app.AlgoTest" time="0"/>
   <testcase name="t28" classname="com.mycompany.app.AlgoTest" time="0"/>
   <testcase name="t29" classname="com.mycompany.app.AlgoTest" time="0"/>
-  <testcase name="t30" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t30" classname="com.mycompany.app.AlgoTest" time="0.001"/>
+  <testcase name="t31" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t32" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t33" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t34" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t35" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t36" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t37" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t39" classname="com.mycompany.app.AlgoTest" time="0"/>
+  <testcase name="t40" classname="com.mycompany.app.AlgoTest" time="0"/>
 </testsuite>

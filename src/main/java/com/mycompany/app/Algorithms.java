@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Queue;
+import java.util.Stack;
 
 public class Algorithms {
     
@@ -262,19 +263,6 @@ public class Algorithms {
         adj.get(v).add(u);
     }
 
-    static void print(ArrayList<ArrayList<Integer>> adj)
-    {
-        for (ArrayList<Integer> integers : adj) 
-        {
-            for (Integer integer : integers) 
-            {
-                System.out.print(integer + " ");
-            }
-
-            System.out.println();
-        }
-    }
-
     public static boolean[] bfs(ArrayList<ArrayList<Integer>> adj,int v,int s)
     {
 
@@ -322,11 +310,13 @@ public class Algorithms {
     }
 
     public static int bfsDisconnected(ArrayList<ArrayList<Integer>> adj,int noOfVertices){
-        System.out.println("Graph.bfsDisconnected");
         boolean[] visited = new boolean[noOfVertices];
         int count = 0;
-        for (int i = 0; i < noOfVertices; i++) {
-            if (!visited[i]){
+
+        for (int i = 0; i < noOfVertices; i++) 
+        {
+            if (!visited[i])
+            {
                 bfsDisconnected(adj,i,visited);
                 count++;
             }
@@ -345,26 +335,130 @@ public class Algorithms {
         }
     }
 
-    public static void dfs(ArrayList<ArrayList<Integer>> adj,int vertex,int source){
-        System.out.println("Graph.dfs");
+    public static void dfs(ArrayList<ArrayList<Integer>> adj,int vertex,int source)
+    {
         boolean[] visited = new boolean[vertex];
         dfsRecursion(adj,source,visited);
-        System.out.println();
     }
 
-    public static int  dfsDisconnected(ArrayList<ArrayList<Integer>> adj,int vertex){
-        System.out.println("Graph.dfsDisconnected");
+    public static int  dfsDisconnected(ArrayList<ArrayList<Integer>> adj,int vertex)
+    {
         boolean[] visited = new boolean[vertex];
         int noOfConnectedComponents = 0;
-        for (int i = 0; i < vertex; i++) {
-            if (!visited[i]){
+
+        for (int i = 0; i < vertex; i++) 
+        {
+            if (!visited[i])
+            {
                 dfsRecursion(adj,i,visited);
-                System.out.println();
                 noOfConnectedComponents++;
             }
         }
 
         return noOfConnectedComponents;
+    }
+
+    // *****************************************************************************************************************
+
+    public static int primsAlgorithm(int[][] graph,int v) 
+    {
+        if(v == 0)
+            return 0;
+
+        int[] key = new int[v];
+        Arrays.fill(key,Integer.MAX_VALUE);
+        key[0] = 0;
+        /*Length of the MST*/
+        int minLength = key[0];
+        /*
+        * It stores the nodes/vertices already visited in the minimum spanning tree*/
+        boolean[] mset = new boolean[v];
+        for (int i = 0; i < v; i++) 
+        {
+            /* The current node you are at*/
+            int u = -1;
+            /* Find the smaller node to move to*/
+            for (int j = 0; j < v; j++) 
+            {
+                /* If mSet does not has the current element*/
+                if (!mset[j])
+                {
+                    if (u == -1 || key[j] < key[u])
+                    {
+                        u = i;
+                    }
+                }
+            }
+
+            mset[u] = true;
+            minLength += key[u];
+            for (int j = 0; j < v; j++) 
+            {
+                /* If mSet does not has the current element
+                 * And graph is connected*/
+                if (!mset[j] && graph[u][j]!=0)
+                {
+                    key[j] = Math.min(graph[u][j],key[j]);
+                }
+            }
+        }
+
+        return minLength;
+    }
+
+    // **************************************************************************************************************
+
+    private static int[][] impl(final int[][] graph, int source) {
+        // Contains the shortest distance from source to each node
+        int[] distance = new int[graph.length];
+
+        // Contains the predecessor to each node
+        int[] predecessor = new int[graph.length];
+
+        for (int i = 0; i < graph.length; i++) {
+            distance[i] = Integer.MAX_VALUE;
+            predecessor[i] = -1;
+        }
+
+        distance[source] = 0;
+        for (int i = 1; i < graph.length; i++) {
+            for (int s = 0; s < graph.length; s++) {
+                for (int d = 0; d < graph[s].length; d++) {
+                    int weight = graph[s][d];
+                    if (distance[s] != Integer.MAX_VALUE && distance[s] + weight < distance[d]) {
+                        distance[d] = distance[s] + weight;
+                        predecessor[d] = s;
+                    }
+                }
+            }
+        }
+
+        // Check for negative-weight circles
+        for (int u = 1; u < graph.length; u++) {
+            for (int v = 0; v < graph.length; v++) {
+                if (distance[u] + graph[u][v] < distance[v]) {
+                    return new int[0][];
+                }
+            }
+        }
+
+        return new int[][]{distance, predecessor};
+    }
+
+    public static int[][] bellmanFord(final int[][] inGraph) {
+        int[][] res = new int[inGraph.length][];
+        for (int i = 0; i < inGraph.length; i++) {
+            int[][] b_f_res = impl(inGraph, i);
+            if (b_f_res.length == 2) {
+                // Only fill in the distance, you may use b_f_res[1] to get the nodes visited to
+                // get to a specific node
+                res[i] = b_f_res[0];
+            } else {
+                return new int[0][];
+            }
+        }
+
+        return res;
     }
 
 }

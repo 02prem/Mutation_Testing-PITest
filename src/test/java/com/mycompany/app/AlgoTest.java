@@ -1,6 +1,7 @@
 package com.mycompany.app;
 
 import org.junit.Test;
+import org.junit.experimental.theories.suppliers.TestedOn;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -242,8 +243,121 @@ public class AlgoTest {
         adj.add(new ArrayList<>(Arrays.asList(1, 2)));
         adj.add(new ArrayList<>(Arrays.asList(0, 2)));
         adj.add(new ArrayList<>(Arrays.asList(0, 1)));
+        int result = Algorithms.bfsDisconnected(adj, 3);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void t31() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        adj.add(new ArrayList<>(Arrays.asList(1, 2)));
+        adj.add(new ArrayList<>(Arrays.asList(0, 2)));
+        adj.add(new ArrayList<>(Arrays.asList(0, 1)));
         boolean[] visited = new boolean[3];
         Algorithms.dfsRecursion(adj, 0, visited);
         assertTrue(Arrays.equals(new boolean[]{true, true, true}, visited));
+    }
+
+    @Test
+    public void t32() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        adj.add(new ArrayList<>(Arrays.asList(0)));
+        adj.add(new ArrayList<>(Arrays.asList(1)));
+        adj.add(new ArrayList<>(Arrays.asList(2)));
+        int result = Algorithms.bfsDisconnected(adj, 3);
+        assertEquals(3, result);
+    }
+
+    @Test
+    public void t33() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        adj.add(new ArrayList<>(Arrays.asList(1, 2)));
+        adj.add(new ArrayList<>(Arrays.asList(0, 2)));
+        adj.add(new ArrayList<>(Arrays.asList(0, 1)));
+        int result = Algorithms.bfsDisconnected(adj, 3);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void t34() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        adj.add(new ArrayList<>(Arrays.asList(0)));
+        int result = Algorithms.dfsDisconnected(adj, 1);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void t35() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        adj.add(new ArrayList<>(Arrays.asList(0)));
+        adj.add(new ArrayList<>(Arrays.asList(1)));
+        adj.add(new ArrayList<>(Arrays.asList(2)));
+        int result = Algorithms.dfsDisconnected(adj, 3);
+        assertEquals(3, result);
+    }
+
+    @Test
+    public void t36() {
+        int[][] graph = {
+                {0, 2, 0, 0, 0},
+                {2, 0, 0, 0, 0},
+                {0, 0, 0, 0, 7},
+                {0, 0, 0, 0, 9},
+                {0, 0, 7, 9, 0}
+        };
+        int result = Algorithms.primsAlgorithm(graph, 5);
+        assertEquals(7, result);
+    }
+
+    @Test
+    public void t37() {
+        int[][] graph = {};
+        int result = Algorithms.primsAlgorithm(graph, 0);
+        assertEquals(0, result);
+    }
+
+    // @Test
+    // public void t38() {
+    //     // Test case 1: Valid graph with positive weights
+    //     int[][] graph1 = {
+    //         {0, 2, 4, 0, 0},
+    //         {0, 0, 1, 7, 0},
+    //         {0, 0, 0, 0, 3},
+    //         {0, 0, 0, 0, 1},
+    //         {0, 0, 0, 0, 0}
+    //     };
+    //     int[][] result1 = Algorithms.bellmanFord(graph1);
+    //     int[][] expected1 = {
+    //         {0, 0, 3, 9, 12},
+    //         {Integer.MAX_VALUE, 0, 1, 7, 10},
+    //         {Integer.MAX_VALUE, Integer.MAX_VALUE, 0, 6, 3},
+    //         {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0, 1},
+    //         {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0}
+    //     };
+    //     assertArrayEquals(expected1, result1);
+    // }
+
+    @Test
+    public void t39() {
+        // Test case 2: Graph with negative-weight cycle
+        int[][] graph2 = {
+            {0, 2, 4, 0, 0},
+            {0, 0, -1, 7, 0},
+            {0, 0, 0, 0, 3},
+            {0, 0, 0, 0, 1},
+            {0, 0, 0, 0, 0}
+        };
+        int[][] result2 = Algorithms.bellmanFord(graph2);
+        int[][] expected2 = new int[0][];
+        assertArrayEquals(expected2, result2);
+    }
+
+    @Test
+    public void t40() {
+        // Test case 3: Graph with a single node
+        int[][] graph3 = {{0}};
+        int[][] result3 = Algorithms.bellmanFord(graph3);
+        int[][] expected3 = {{0}};
+        assertArrayEquals(expected3, result3);
     }
 }

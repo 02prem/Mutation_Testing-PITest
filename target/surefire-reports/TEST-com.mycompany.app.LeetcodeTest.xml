@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mycompany.app.NumberTheoryTest" time="0.003" tests="36" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.mycompany.app.LeetcodeTest" time="0.042" tests="26" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -58,40 +58,30 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="t1" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t2" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t3" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t4" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t5" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t6" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t7" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t8" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t9" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="tx" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t10" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t11" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t12" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t13" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t14" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t15" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t16" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t17" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t18" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t19" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t20" classname="com.mycompany.app.NumberTheoryTest" time="0.001"/>
-  <testcase name="t21" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t22" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t23" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t24" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t25" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t26" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t27" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t28" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t29" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t30" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t31" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t32" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t33" classname="com.mycompany.app.NumberTheoryTest" time="0.001"/>
-  <testcase name="t34" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
-  <testcase name="t35" classname="com.mycompany.app.NumberTheoryTest" time="0"/>
+  <testcase name="t1" classname="com.mycompany.app.LeetcodeTest" time="0.002"/>
+  <testcase name="t2" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t3" classname="com.mycompany.app.LeetcodeTest" time="0.001"/>
+  <testcase name="t4" classname="com.mycompany.app.LeetcodeTest" time="0.001"/>
+  <testcase name="t5" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t6" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t7" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t8" classname="com.mycompany.app.LeetcodeTest" time="0.001"/>
+  <testcase name="t9" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t10" classname="com.mycompany.app.LeetcodeTest" time="0.001"/>
+  <testcase name="t11" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t12" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t13" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t14" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t15" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t16" classname="com.mycompany.app.LeetcodeTest" time="0.001"/>
+  <testcase name="t17" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t18" classname="com.mycompany.app.LeetcodeTest" time="0.001"/>
+  <testcase name="t19" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t20" classname="com.mycompany.app.LeetcodeTest" time="0.001"/>
+  <testcase name="t21" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t22" classname="com.mycompany.app.LeetcodeTest" time="0.001"/>
+  <testcase name="t23" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t24" classname="com.mycompany.app.LeetcodeTest" time="0.001"/>
+  <testcase name="t25" classname="com.mycompany.app.LeetcodeTest" time="0"/>
+  <testcase name="t26" classname="com.mycompany.app.LeetcodeTest" time="0.001"/>
 </testsuite>
