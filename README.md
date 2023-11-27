@@ -1,3 +1,8 @@
+# Commands to run
+Command to compile the code and run test cases: $mvn clean install <br />
+Command to run pitest: $mvn test-compile org.pitest:pitest-maven:mutationCoverage<br />
+This will generate the Pit test html report pit-reports folder in target directory.
+
 # Contribution
 
 ### Prem Shah - IMT2020044
