@@ -3,103 +3,103 @@ package com.mycompany.app;
 import java.util.*;
 
 public class NumberTheory {
-    // public static void main(String[] args) 
-    // {
-    //     Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) 
+    {
+        Scanner scanner = new Scanner(System.in);
 
-    //     int choice, precision, base;
-    //     int l1_size, l2_size, exp1, exp2;
+        int choice, precision, base;
+        int l1_size, l2_size, exp1, exp2;
 
-    //     AbstractMap.SimpleEntry<List<Integer>, Integer> ans;
-    //     List<Integer> l1 = new ArrayList<>();
-    //     List<Integer> l2 = new ArrayList<>();
+        AbstractMap.SimpleEntry<List<Integer>, Integer> ans;
+        List<Integer> l1 = new ArrayList<>();
+        List<Integer> l2 = new ArrayList<>();
 
-    //     System.out.println("Take input of first list");
-    //     l1_size = scanner.nextInt();
-    //     for(int i = 0; i < l1_size; i++){
-    //         int x = scanner.nextInt();
-    //         l1.add(x);
-    //     }
+        System.out.println("Take input of first list");
+        l1_size = scanner.nextInt();
+        for(int i = 0; i < l1_size; i++){
+            int x = scanner.nextInt();
+            l1.add(x);
+        }
 
-    //     System.out.print("exp1: ");
-    //     exp1 = scanner.nextInt();
-    //     System.out.println();
+        System.out.print("exp1: ");
+        exp1 = scanner.nextInt();
+        System.out.println();
 
-    //     System.out.println("Take input of second list");
-    //     l2_size = scanner.nextInt();
-    //     for(int i = 0; i < l2_size; i++){
-    //         int y = scanner.nextInt();
-    //         l2.add(y);
-    //     }
-    //     System.out.print("exp2: ");
-    //     exp2 = scanner.nextInt();
-    //     System.out.println();
+        System.out.println("Take input of second list");
+        l2_size = scanner.nextInt();
+        for(int i = 0; i < l2_size; i++){
+            int y = scanner.nextInt();
+            l2.add(y);
+        }
+        System.out.print("exp2: ");
+        exp2 = scanner.nextInt();
+        System.out.println();
 
-    //     System.out.print("Base: ");
-    //     base = scanner.nextInt();
-    //     System.out.println();
+        System.out.print("Base: ");
+        base = scanner.nextInt();
+        System.out.println();
 
-    //     System.out.println("Choose on of the below operations");
-    //     System.out.println("1. Addition");
-    //     System.out.println("2. Subtraction");
-    //     System.out.println("3. Multiplication");
-    //     System.out.println("4. Division");
+        System.out.println("Choose on of the below operations");
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
 
-    //     choice = scanner.nextInt();
+        choice = scanner.nextInt();
 
-    //     AbstractMap.SimpleEntry<List<Integer>, Integer> num1 = new AbstractMap.SimpleEntry<>(l1, exp1);
-    //     AbstractMap.SimpleEntry<List<Integer>, Integer> num2 = new AbstractMap.SimpleEntry<>(l2, exp2);
+        AbstractMap.SimpleEntry<List<Integer>, Integer> num1 = new AbstractMap.SimpleEntry<>(l1, exp1);
+        AbstractMap.SimpleEntry<List<Integer>, Integer> num2 = new AbstractMap.SimpleEntry<>(l2, exp2);
 
-    //     switch (choice) {
-    //         case 1:
-    //             ans = addReal(num1, num2, base);
-    //             for (int i : ans.getKey()) 
-    //             {
-    //                 System.out.print(i);
-    //             }
-    //             System.out.println();
-    //             System.out.println(ans.getValue());
-    //             break;
+        switch (choice) {
+            case 1:
+                ans = addReal(num1, num2, base);
+                for (int i : ans.getKey()) 
+                {
+                    System.out.print(i);
+                }
+                System.out.println();
+                System.out.println(ans.getValue());
+                break;
         
-    //         case 2:
-    //             ans = subtractReal(num1, num2, base);
-    //             for (int i : ans.getKey()) 
-    //             {
-    //                 System.out.print(i);
-    //             }
-    //             System.out.println();
-    //             System.out.println(ans.getValue());
-    //             break;
+            case 2:
+                ans = subtractReal(num1, num2, base);
+                for (int i : ans.getKey()) 
+                {
+                    System.out.print(i);
+                }
+                System.out.println();
+                System.out.println(ans.getValue());
+                break;
 
-    //         case 3:
-    //             ans = multiplyReal(num1, num2, base);
-    //             for (int i : ans.getKey()) 
-    //             {
-    //                 System.out.print(i);
-    //             }
-    //             System.out.println();
-    //             System.out.println(ans.getValue());
-    //             break;
+            case 3:
+                ans = multiplyReal(num1, num2, base);
+                for (int i : ans.getKey()) 
+                {
+                    System.out.print(i);
+                }
+                System.out.println();
+                System.out.println(ans.getValue());
+                break;
 
-    //         case 4:
-    //             System.out.print("Precision: ");
-    //             precision = scanner.nextInt();
-    //             System.out.println();
-    //             ans = divideReal(num1, num2, precision, base);
-    //             System.out.print("Quotient: ");
-    //             for (int i : ans.getKey()) 
-    //             {
-    //                 System.out.print(i);
-    //             }
-    //             System.out.println(" x " + base + "^" + ans.getValue());
-    //             break;
+            case 4:
+                System.out.print("Precision: ");
+                precision = scanner.nextInt();
+                System.out.println();
+                ans = divideReal(num1, num2, precision, base);
+                System.out.print("Quotient: ");
+                for (int i : ans.getKey()) 
+                {
+                    System.out.print(i);
+                }
+                System.out.println(" x " + base + "^" + ans.getValue());
+                break;
 
-    //         default:
-    //             break;
-    //     }
+            default:
+                break;
+        }
 
-    //     scanner.close();
-    // }
+        scanner.close();
+    }
 
 // ******************************** ADDITION ***************************************************** //
     public static List<Integer> add(List<Integer> num1, List<Integer> num2, int base) 
